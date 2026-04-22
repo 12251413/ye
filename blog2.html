@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国内十大徒步路线推荐 - 户外探险</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 博客详情页面样式 */
+        .blog-header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=hiking%20trail%20mountain%20landscape%20beautiful&image_size=landscape_16_9');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .blog-header h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+
+        .blog-content {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .blog-content .container {
+            max-width: 800px;
+        }
+
+        .blog-content h2 {
+            font-size: 28px;
+            margin: 40px 0 20px;
+            color: #2c7a4b;
+        }
+
+        .blog-content h3 {
+            font-size: 22px;
+            margin: 30px 0 15px;
+            color: #333;
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .blog-content ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .blog-content li {
+            margin-bottom: 10px;
+        }
+
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .route-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .route-card h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #2c7a4b;
+        }
+
+        .route-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .route-info-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .route-info-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .route-info-value {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .related-posts {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+
+        .related-posts h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .related-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .related-card-content {
+            padding: 20px;
+        }
+
+        .related-card h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .related-card p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .related-card a {
+            color: #2c7a4b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .related-card a:hover {
+            color: #1e5a36;
+        }
+
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 28px;
+            }
+
+            .blog-content h2 {
+                font-size: 24px;
+            }
+
+            .blog-content h3 {
+                font-size: 20px;
+            }
+
+            .route-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header id="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>户外探险</h1>
+            </div>
+            <div class="search-container">
+                <form class="search-form" id="search-form">
+                    <input type="text" placeholder="搜索产品..." id="search-input">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="tent.html">产品</a></li>
+                    <li><a href="index.html#blog">攻略</a></li>
+                    <li><a href="index.html#about">关于我们</a></li>
+                    <li><a href="index.html#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="cart" id="cart-btn"><i class="fas fa-shopping-cart"></i> 购物车 <span id="cart-count">0</span></a>
+                <a href="#" class="login" id="login-btn">登录/注册</a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="mobile-nav" id="mobile-nav">
+            <div class="mobile-search">
+                <form class="search-form" id="mobile-search-form">
+                    <input type="text" placeholder="搜索产品..." id="mobile-search-input">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="tent.html">产品</a></li>
+                <li><a href="index.html#blog">攻略</a></li>
+                <li><a href="index.html#about">关于我们</a></li>
+                <li><a href="index.html#contact">联系我们</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 博客头部 -->
+    <section class="blog-header">
+        <div class="container">
+            <h1>国内十大徒步路线推荐</h1>
+            <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> 2026-04-18</span>
+                <span><i class="far fa-user"></i> 徒步专家</span>
+                <span><i class="far fa-eye"></i> 2,456 阅读</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 博客内容 -->
+    <section class="blog-content">
+        <div class="container">
+            <p>徒步旅行是一种令人难忘的户外体验，它让我们深入自然，挑战自我，欣赏到平常难以见到的美景。中国拥有丰富的自然景观，从雄伟的山脉到壮丽的峡谷，从原始的森林到广阔的草原，为徒步爱好者提供了无数的选择。本指南精选了国内十大徒步路线，适合不同级别的户外爱好者，希望能为您的徒步之旅提供参考。</p>
+
+            <h2>一、初级徒步路线</h2>
+
+            <div class="route-card">
+                <h4>1. 北京香山徒步路线</h4>
+                <div class="route-info">
+                    <div class="route-info-item">
+                        <div class="route-info-label">难度等级</div>
+                        <div class="route-info-value">初级</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">最佳时间</div>
+                        <div class="route-info-value">春秋两季</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">全程距离</div>
+                        <div class="route-info-value">约10公里</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">预计时间</div>
+                        <div class="route-info-value">3-4小时</div>
+                    </div>
+                </div>
+                <p>香山是北京最受欢迎的徒步目的地之一，适合初学者。路线成熟，设施完善，沿途风景优美，特别是秋季红叶季节，更是美不胜收。推荐路线：东门-香炉峰-鬼见愁-北门，全程约10公里，海拔上升约500米，适合一日游。</p>
+                <p>装备建议：舒适的徒步鞋，轻便背包，水和零食，防晒用品。</p>
+            </div>
+
+            <div class="route-card">
+                <h4>2. 杭州西湖环山徒步路线</h4>
+                <div class="route-info">
+                    <div class="route-info-item">
+                        <div class="route-info-label">难度等级</div>
+                        <div class="route-info-value">初级</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">最佳时间</div>
+                        <div class="route-info-value">全年</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">全程距离</div>
+                        <div class="route-info-value">约15公里</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">预计时间</div>
+                        <div class="route-info-value">4-5小时</div>
+                    </div>
+                </div>
+                <p>西湖环山路线环绕西湖，风景秀丽，文化底蕴深厚。路线途经多个著名景点，如灵隐寺、龙井茶园等，适合休闲徒步。全程路况良好，海拔起伏不大，适合各个年龄段的徒步爱好者。</p>
+                <p>装备建议：舒适的徒步鞋，轻便背包，水和零食，相机。</p>
+            </div>
+
+            <h2>二、中级徒步路线</h2>
+
+            <div class="route-card">
+                <h4>3. 黄山徒步路线</h4>
+                <div class="route-info">
+                    <div class="route-info-item">
+                        <div class="route-info-label">难度等级</div>
+                        <div class="route-info-value">中级</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">最佳时间</div>
+                        <div class="route-info-value">4-6月，9-11月</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">全程距离</div>
+                        <div class="route-info-value">约30公里</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">预计时间</div>
+                        <div class="route-info-value">2-3天</div>
+                    </div>
+                </div>
+                <p>黄山以奇松、怪石、云海、温泉、冬雪"五绝"闻名于世，是中国最著名的徒步胜地之一。推荐路线：汤口-云谷寺-白鹅岭-始信峰-北海-西海大峡谷-光明顶-玉屏楼-慈光阁，全程约30公里，需要2-3天时间完成。沿途可以欣赏到黄山的壮丽景色，特别是云海景观令人叹为观止。</p>
+                <p>装备建议：专业徒步鞋，背包，睡袋，保暖衣物，雨具，头灯，水和食物。</p>
+            </div>
+
+            <div class="route-card">
+                <h4>4. 稻城亚丁徒步路线</h4>
+                <div class="route-info">
+                    <div class="route-info-item">
+                        <div class="route-info-label">难度等级</div>
+                        <div class="route-info-value">中级</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">最佳时间</div>
+                        <div class="route-info-value">4-5月，9-10月</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">全程距离</div>
+                        <div class="route-info-value">约20公里</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">预计时间</div>
+                        <div class="route-info-value">2天</div>
+                    </div>
+                </div>
+                <p>稻城亚丁位于四川省甘孜藏族自治州，被誉为"最后的香格里拉"。徒步路线围绕三座神山（仙乃日、央迈勇、夏诺多吉）展开，沿途可以欣赏到高原湖泊、草甸、森林等多种景观。推荐路线：冲古寺-珍珠海-洛绒牛场-牛奶海-五色海，全程约20公里，需要2天时间完成。</p>
+                <p>装备建议：专业徒步鞋，背包，睡袋，保暖衣物，高原药品，水和食物。</p>
+            </div>
+
+            <h2>三、高级徒步路线</h2>
+
+            <div class="route-card">
+                <h4>5. 墨脱徒步路线</h4>
+                <div class="route-info">
+                    <div class="route-info-item">
+                        <div class="route-info-label">难度等级</div>
+                        <div class="route-info-value">高级</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">最佳时间</div>
+                        <div class="route-info-value">5-10月</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">全程距离</div>
+                        <div class="route-info-value">约120公里</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">预计时间</div>
+                        <div class="route-info-value">5-6天</div>
+                    </div>
+                </div>
+                <p>墨脱徒步路线是中国最具挑战性的徒步路线之一，位于西藏自治区林芝市。路线穿越雅鲁藏布江大峡谷，沿途地形复杂，气候多变，需要一定的徒步经验和体力。但沿途的原始森林、峡谷、瀑布等景观令人震撼，是徒步爱好者的终极挑战。</p>
+                <p>装备建议：专业徒步鞋，防水背包，睡袋，保暖衣物，雨具，头灯，GPS，急救包，水和食物。</p>
+            </div>
+
+            <div class="route-card">
+                <h4>6. 冈仁波齐转山路线</h4>
+                <div class="route-info">
+                    <div class="route-info-item">
+                        <div class="route-info-label">难度等级</div>
+                        <div class="route-info-value">高级</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">最佳时间</div>
+                        <div class="route-info-value">5-10月</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">全程距离</div>
+                        <div class="route-info-value">约56公里</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">预计时间</div>
+                        <div class="route-info-value">2-3天</div>
+                    </div>
+                </div>
+                <p>冈仁波齐是藏传佛教、印度教、苯教等宗教的圣山，位于西藏自治区阿里地区。转山路线围绕冈仁波齐峰展开，海拔在4500米以上，对体力和高原适应能力要求较高。但沿途的宗教文化和壮丽的高原景观使其成为众多徒步爱好者的梦想之地。</p>
+                <p>装备建议：专业徒步鞋，防水背包，睡袋，保暖衣物，高原药品，雨具，头灯，水和食物。</p>
+            </div>
+
+            <h2>四、其他推荐路线</h2>
+
+            <div class="route-card">
+                <h4>7. 张家界国家森林公园徒步路线</h4>
+                <div class="route-info">
+                    <div class="route-info-item">
+                        <div class="route-info-label">难度等级</div>
+                        <div class="route-info-value">中级</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">最佳时间</div>
+                        <div class="route-info-value">4-6月，9-11月</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">全程距离</div>
+                        <div class="route-info-value">约30公里</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">预计时间</div>
+                        <div class="route-info-value">2-3天</div>
+                    </div>
+                </div>
+                <p>张家界国家森林公园以独特的石英砂岩峰林地貌闻名于世，被誉为"中国山水画的原本"。徒步路线途经金鞭溪、袁家界、杨家界等著名景点，可以欣赏到奇特的峰林景观。</p>
+                <p>装备建议：舒适的徒步鞋，轻便背包，水和零食，相机。</p>
+            </div>
+
+            <div class="route-card">
+                <h4>8. 四姑娘山长坪沟徒步路线</h4>
+                <div class="route-info">
+                    <div class="route-info-item">
+                        <div class="route-info-label">难度等级</div>
+                        <div class="route-info-value">中级</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">最佳时间</div>
+                        <div class="route-info-value">5-10月</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">全程距离</div>
+                        <div class="route-info-value">约40公里</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">预计时间</div>
+                        <div class="route-info-value">3-4天</div>
+                    </div>
+                </div>
+                <p>四姑娘山位于四川省阿坝藏族羌族自治州，是中国著名的登山和徒步胜地。长坪沟徒步路线沿途可以欣赏到四姑娘山的壮丽景色，包括雪山、草甸、森林等多种景观。</p>
+                <p>装备建议：专业徒步鞋，背包，睡袋，保暖衣物，雨具，头灯，水和食物。</p>
+            </div>
+
+            <div class="route-card">
+                <h4>9. 雨崩徒步路线</h4>
+                <div class="route-info">
+                    <div class="route-info-item">
+                        <div class="route-info-label">难度等级</div>
+                        <div class="route-info-value">中级</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">最佳时间</div>
+                        <div class="route-info-value">5-10月</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">全程距离</div>
+                        <div class="route-info-value">约30公里</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">预计时间</div>
+                        <div class="route-info-value">3-4天</div>
+                    </div>
+                </div>
+                <p>雨崩位于云南省迪庆藏族自治州，是一个与世隔绝的藏族村落，被誉为"世外桃源"。徒步路线围绕梅里雪山展开，沿途可以欣赏到雪山、冰川、森林、草甸等多种景观，是一条集自然美景和人文风情于一体的徒步路线。</p>
+                <p>装备建议：专业徒步鞋，背包，睡袋，保暖衣物，雨具，头灯，水和食物。</p>
+            </div>
+
+            <div class="route-card">
+                <h4>10. 武功山徒步路线</h4>
+                <div class="route-info">
+                    <div class="route-info-item">
+                        <div class="route-info-label">难度等级</div>
+                        <div class="route-info-value">中级</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">最佳时间</div>
+                        <div class="route-info-value">5-10月</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">全程距离</div>
+                        <div class="route-info-value">约40公里</div>
+                    </div>
+                    <div class="route-info-item">
+                        <div class="route-info-label">预计时间</div>
+                        <div class="route-info-value">2-3天</div>
+                    </div>
+                </div>
+                <p>武功山位于江西省萍乡市，以其壮观的高山草甸和云海景观闻名。徒步路线穿越武功山的核心景区，沿途可以欣赏到连绵起伏的草甸、壮观的云海和日出日落景观，是一条非常适合摄影爱好者的徒步路线。</p>
+                <p>装备建议：专业徒步鞋，背包，睡袋，保暖衣物，雨具，头灯，相机，水和食物。</p>
+            </div>
+
+            <h2>五、徒步准备与安全注意事项</h2>
+
+            <h3>1. 徒步前准备</h3>
+            <ul>
+                <li><strong>体能准备：</strong>根据路线难度进行适当的体能训练，增强耐力和力量。</li>
+                <li><strong>装备准备：</strong>根据路线和季节选择合适的装备，确保装备的质量和可靠性。</li>
+                <li><strong>路线规划：</strong>提前了解路线的详细信息，包括距离、海拔、路况等。</li>
+                <li><strong>天气查询：</strong>出发前查看天气预报，避免在恶劣天气下徒步。</li>
+                <li><strong>保险：</strong>购买户外保险，确保在遇到意外时能够得到及时的救援和治疗。</li>
+            </ul>
+
+            <h3>2. 安全注意事项</h3>
+            <ul>
+                <li><strong>团队合作：</strong>尽量结伴而行，不要单独徒步。</li>
+                <li><strong>通讯设备：</strong>携带手机、对讲机等通讯设备，确保能够与外界保持联系。</li>
+                <li><strong>导航工具：</strong>携带地图、指南针、GPS等导航工具，避免迷路。</li>
+                <li><strong>紧急救援：</strong>了解当地的紧急救援电话和救援路线。</li>
+                <li><strong>尊重自然：</strong>遵守Leave No Trace原则，不要破坏环境。</li>
+                <li><strong>高原反应：</strong>在高海拔地区徒步时，要注意预防高原反应，逐渐适应海拔变化。</li>
+            </ul>
+
+            <p>徒步旅行是一种充满挑战和乐趣的户外活动，希望本指南能够帮助您选择适合自己的徒步路线，享受大自然的美好。无论您是初学者还是经验丰富的徒步爱好者，都能在这些路线中找到属于自己的快乐和挑战。</p>
+        </div>
+    </section>
+
+    <!-- 相关文章 -->
+    <section class="related-posts">
+        <div class="container">
+            <h2>相关文章</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=camping%20tips%20beginners%20outdoor%20adventure&image_size=landscape_16_9" alt="露营技巧">
+                    <div class="related-card-content">
+                        <h3>新手露营完全指南</h3>
+                        <p>从装备选择到营地搭建，让您的第一次露营轻松愉快</p>
+                        <a href="blog1.html">阅读更多</a>
+                    </div>
+                </div>
+                <div class="related-card">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=outdoor%20gear%20maintenance%20tips&image_size=landscape_16_9" alt="装备维护">
+                    <div class="related-card-content">
+                        <h3>户外装备维护保养技巧</h3>
+                        <p>延长装备使用寿命的实用方法，让您的投资物有所值</p>
+                        <a href="blog3.html">阅读更多</a>
+                    </div>
+                </div>
+                <div class="related-card">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=hiking%20gear%20essentials&image_size=landscape_16_9" alt="徒步装备">
+                    <div class="related-card-content">
+                        <h3>徒步装备必备清单</h3>
+                        <p>为您的徒步之旅准备必要的装备</p>
+                        <a href="#">阅读更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>户外探险</h3>
+                    <p>专业户外装备供应商，为您的探险之旅提供保障</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="tent.html">帐篷</a></li>
+                        <li><a href="sleeping-bag.html">睡袋</a></li>
+                        <li><a href="backpack.html">背包</a></li>
+                        <li><a href="cookware.html">炊具</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>客户服务</h3>
+                    <ul>
+                        <li><a href="#">退换货政策</a></li>
+                        <li><a href="#">配送信息</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 户外探险. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

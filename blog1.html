@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新手露营完全指南 - 户外探险</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 博客详情页面样式 */
+        .blog-header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=camping%20tips%20beginners%20outdoor%20adventure&image_size=landscape_16_9');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .blog-header h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+
+        .blog-content {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .blog-content .container {
+            max-width: 800px;
+        }
+
+        .blog-content h2 {
+            font-size: 28px;
+            margin: 40px 0 20px;
+            color: #2c7a4b;
+        }
+
+        .blog-content h3 {
+            font-size: 22px;
+            margin: 30px 0 15px;
+            color: #333;
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .blog-content ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .blog-content li {
+            margin-bottom: 10px;
+        }
+
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-posts {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+
+        .related-posts h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .related-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .related-card-content {
+            padding: 20px;
+        }
+
+        .related-card h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .related-card p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .related-card a {
+            color: #2c7a4b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .related-card a:hover {
+            color: #1e5a36;
+        }
+
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 28px;
+            }
+
+            .blog-content h2 {
+                font-size: 24px;
+            }
+
+            .blog-content h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header id="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>户外探险</h1>
+            </div>
+            <div class="search-container">
+                <form class="search-form" id="search-form">
+                    <input type="text" placeholder="搜索产品..." id="search-input">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="tent.html">产品</a></li>
+                    <li><a href="index.html#blog">攻略</a></li>
+                    <li><a href="index.html#about">关于我们</a></li>
+                    <li><a href="index.html#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="cart" id="cart-btn"><i class="fas fa-shopping-cart"></i> 购物车 <span id="cart-count">0</span></a>
+                <a href="#" class="login" id="login-btn">登录/注册</a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="mobile-nav" id="mobile-nav">
+            <div class="mobile-search">
+                <form class="search-form" id="mobile-search-form">
+                    <input type="text" placeholder="搜索产品..." id="mobile-search-input">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="tent.html">产品</a></li>
+                <li><a href="index.html#blog">攻略</a></li>
+                <li><a href="index.html#about">关于我们</a></li>
+                <li><a href="index.html#contact">联系我们</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 博客头部 -->
+    <section class="blog-header">
+        <div class="container">
+            <h1>新手露营完全指南</h1>
+            <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> 2026-04-20</span>
+                <span><i class="far fa-user"></i> 户外专家</span>
+                <span><i class="far fa-eye"></i> 1,234 阅读</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 博客内容 -->
+    <section class="blog-content">
+        <div class="container">
+            <p>露营是一项令人兴奋的户外活动，它让我们远离城市的喧嚣，亲近大自然，享受宁静与美景。对于新手来说，第一次露营可能会有些紧张和不知所措，但只要做好充分准备，你就能拥有一次难忘的户外体验。本指南将从装备选择、营地搭建、安全注意事项等方面，为你提供全面的露营知识。</p>
+
+            <h2>一、装备选择</h2>
+            
+            <h3>1. 帐篷</h3>
+            <p>选择适合人数的帐篷是露营的基础。对于新手来说，建议选择：</p>
+            <ul>
+                <li><strong>容量：</strong>选择比实际人数多1-2人的帐篷，这样会更加宽敞舒适。</li>
+                <li><strong>重量：</strong>如果是汽车露营，重量不是主要问题；如果是徒步露营，需要选择轻量化帐篷。</li>
+                <li><strong>季节：</strong>三季帐篷适合春、夏、秋三季使用，四季帐篷则可以应对冬季的低温。</li>
+                <li><strong>搭建难度：</strong>选择搭建简单的帐篷，通常带有颜色编码的杆和简单的搭建说明。</li>
+            </ul>
+
+            <h3>2. 睡袋和睡垫</h3>
+            <p>良好的睡眠是露营体验的关键：</p>
+            <ul>
+                <li><strong>睡袋：</strong>根据季节选择合适温度等级的睡袋。夏季可以选择轻便的信封式睡袋，冬季则需要保暖性能更好的木乃伊式睡袋。</li>
+                <li><strong>睡垫：</strong>睡垫不仅提供舒适的睡眠表面，还能隔绝地面的寒冷。选择充气垫或泡沫垫，根据个人需求平衡舒适度和重量。</li>
+            </ul>
+
+            <h3>3. 炊具和餐具</h3>
+            <p>户外烹饪是露营的乐趣之一：</p>
+            <ul>
+                <li><strong>炉具：</strong>选择便携式燃气炉，方便快捷。</li>
+                <li><strong>锅具：</strong>选择轻量化的锅具套装，通常包含锅、煎锅和盖子。</li>
+                <li><strong>餐具：</strong>使用可重复使用的餐具，减少环境影响。</li>
+            </ul>
+
+            <h3>4. 其他必备装备</h3>
+            <ul>
+                <li>头灯或手电筒（带备用电池）</li>
+                <li>多功能工具</li>
+                <li>急救包</li>
+                <li>防水袋</li>
+                <li>防晒霜和驱蚊剂</li>
+                <li>折叠椅和桌子</li>
+            </ul>
+
+            <h2>二、营地选择与搭建</h2>
+
+            <h3>1. 营地选择</h3>
+            <p>选择合适的营地是成功露营的第一步：</p>
+            <ul>
+                <li><strong>安全：</strong>远离可能的危险区域，如悬崖、落石区、洪水区等。</li>
+                <li><strong>平整：</strong>选择平坦的地面，避免斜坡和凹凸不平的地方。</li>
+                <li><strong>排水：</strong>避免在低洼处扎营，以防下雨时积水。</li>
+                <li><strong>避风：</strong>选择有自然屏障的地方，如树木或岩石后方，避免强风。</li>
+                <li><strong>水源：</strong>靠近水源但不要太近，通常保持100米左右的距离。</li>
+            </ul>
+
+            <h3>2. 帐篷搭建</h3>
+            <p>正确搭建帐篷可以确保你的安全和舒适：</p>
+            <ol>
+                <li><strong>清理地面：</strong>移除地面上的石头、树枝和其他尖锐物体。</li>
+                <li><strong>铺设地布：</strong>在地布上搭建帐篷，可以延长帐篷寿命并提供额外的防水保护。</li>
+                <li><strong>搭建框架：</strong>按照说明书搭建帐篷框架，确保所有杆子正确连接。</li>
+                <li><strong>固定帐篷：</strong>使用地钉和防风绳固定帐篷，特别是在有风的情况下。</li>
+                <li><strong>检查：</strong>确保帐篷门和窗户关闭，所有拉链正常工作。</li>
+            </ol>
+
+            <h2>三、安全注意事项</h2>
+
+            <h3>1. 火灾安全</h3>
+            <ul>
+                <li>使用指定的篝火区域，不要在帐篷附近生火。</li>
+                <li>生火前清理周围的易燃物。</li>
+                <li>离开营地或睡觉前确保火完全熄灭。</li>
+                <li>携带灭火器或水源，以防万一。</li>
+            </ul>
+
+            <h3>2. 野生动物防范</h3>
+            <ul>
+                <li>妥善储存食物，使用防熊罐或挂在树上。</li>
+                <li>不要在帐篷内存储食物。</li>
+                <li>保持营地清洁，及时清理垃圾。</li>
+                <li>了解当地野生动物的习性和防范措施。</li>
+            </ul>
+
+            <h3>3. 天气准备</h3>
+            <ul>
+                <li>出发前查看天气预报。</li>
+                <li>携带适合各种天气的衣物。</li>
+                <li>准备防水装备，如雨衣和防水袋。</li>
+                <li>在恶劣天气下，考虑取消或调整行程。</li>
+            </ul>
+
+            <h2>四、露营技巧与建议</h2>
+
+            <h3>1. 打包技巧</h3>
+            <ul>
+                <li>使用收纳袋分类整理装备。</li>
+                <li>将常用物品放在容易取用的地方。</li>
+                <li>重物放在背包底部，轻物放在上部。</li>
+                <li>使用压缩袋减少体积。</li>
+            </ul>
+
+            <h3>2. 烹饪技巧</h3>
+            <ul>
+                <li>提前计划 meals，准备好食材。</li>
+                <li>使用预包装的食材，减少准备时间。</li>
+                <li>带上足够的水，考虑水的净化方法。</li>
+                <li>保持烹饪区域清洁，避免吸引野生动物。</li>
+            </ul>
+
+            <h3>3.  Leave No Trace 原则</h3>
+            <ul>
+                <li>带走所有垃圾，不要留下任何痕迹。</li>
+                <li>使用现有的营地，不要创建新的营地。</li>
+                <li>尊重野生动物和植物。</li>
+                <li>保持声音低调，不要打扰其他露营者和野生动物。</li>
+            </ul>
+
+            <h2>五、常见问题解答</h2>
+
+            <h3>1. 第一次露营应该选择什么样的营地？</h3>
+            <p>对于新手来说，建议选择设施完善的露营地，如国家公园或商业露营地，这些地方通常有厕所、水源和其他便利设施，会让你的第一次露营更加舒适和安全。</p>
+
+            <h3>2. 如何处理露营时的蚊虫问题？</h3>
+            <p>使用驱蚊剂，穿长袖衣物，使用蚊帐，选择风向良好的营地，避免在水边和草丛中扎营。</p>
+
+            <h3>3. 如何应对寒冷天气？</h3>
+            <p>选择适合低温的睡袋，使用睡袋 liner，穿着保暖衣物睡觉，使用热水袋，确保帐篷通风以避免 condensation。</p>
+
+            <h3>4. 如何选择合适的睡袋？</h3>
+            <p>根据露营季节和地点的温度选择睡袋，通常选择比预期最低温度低10-15度的睡袋，以确保足够的保暖性。</p>
+
+            <p>通过本指南的学习，相信你已经对露营有了基本的了解。记住，实践是最好的老师，勇敢地迈出第一步，享受大自然的美好吧！</p>
+        </div>
+    </section>
+
+    <!-- 相关文章 -->
+    <section class="related-posts">
+        <div class="container">
+            <h2>相关文章</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=hiking%20trail%20mountain%20landscape%20beautiful&image_size=landscape_16_9" alt="徒步路线">
+                    <div class="related-card-content">
+                        <h3>国内十大徒步路线推荐</h3>
+                        <p>精选国内最美丽的徒步路线，适合不同级别的户外爱好者</p>
+                        <a href="blog2.html">阅读更多</a>
+                    </div>
+                </div>
+                <div class="related-card">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=outdoor%20gear%20maintenance%20tips&image_size=landscape_16_9" alt="装备维护">
+                    <div class="related-card-content">
+                        <h3>户外装备维护保养技巧</h3>
+                        <p>延长装备使用寿命的实用方法，让您的投资物有所值</p>
+                        <a href="blog3.html">阅读更多</a>
+                    </div>
+                </div>
+                <div class="related-card">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=outdoor%20cooking%20tips%20camping&image_size=landscape_16_9" alt="户外烹饪">
+                    <div class="related-card-content">
+                        <h3>户外烹饪技巧</h3>
+                        <p>在野外也能享受美味佳肴的实用烹饪技巧</p>
+                        <a href="#">阅读更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>户外探险</h3>
+                    <p>专业户外装备供应商，为您的探险之旅提供保障</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="tent.html">帐篷</a></li>
+                        <li><a href="sleeping-bag.html">睡袋</a></li>
+                        <li><a href="backpack.html">背包</a></li>
+                        <li><a href="cookware.html">炊具</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>客户服务</h3>
+                    <ul>
+                        <li><a href="#">退换货政策</a></li>
+                        <li><a href="#">配送信息</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 户外探险. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

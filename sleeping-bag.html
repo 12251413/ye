@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>睡袋分类 - 户外探险</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header id="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>户外探险</h1>
+            </div>
+            <div class="search-container">
+                <form class="search-form" id="search-form">
+                    <input type="text" placeholder="搜索产品..." id="search-input">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="sleeping-bag.html">产品</a></li>
+                    <li><a href="index.html#blog">攻略</a></li>
+                    <li><a href="index.html#about">关于我们</a></li>
+                    <li><a href="index.html#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="cart" id="cart-btn"><i class="fas fa-shopping-cart"></i> 购物车 <span id="cart-count">0</span></a>
+                <a href="#" class="login" id="login-btn">登录/注册</a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="mobile-nav" id="mobile-nav">
+            <div class="mobile-search">
+                <form class="search-form" id="mobile-search-form">
+                    <input type="text" placeholder="搜索产品..." id="mobile-search-input">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="sleeping-bag.html">产品</a></li>
+                <li><a href="index.html#blog">攻略</a></li>
+                <li><a href="index.html#about">关于我们</a></li>
+                <li><a href="index.html#contact">联系我们</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>睡袋分类</h1>
+            <p>保暖舒适的睡袋，为您的户外露营提供良好的睡眠体验</p>
+        </div>
+    </section>
+
+    <!-- 产品筛选 -->
+    <section class="product-filters">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label>价格区间</label>
+                    <select id="price-filter">
+                        <option value="all">全部价格</option>
+                        <option value="0-500">¥0-¥500</option>
+                        <option value="500-1000">¥500-¥1000</option>
+                        <option value="1000+">¥1000以上</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>睡袋类型</label>
+                    <select id="type-filter">
+                        <option value="all">全部类型</option>
+                        <option value="down">羽绒睡袋</option>
+                        <option value="synthetic">合成纤维睡袋</option>
+                        <option value="mummy">木乃伊睡袋</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>温度等级</label>
+                    <select id="temperature-filter">
+                        <option value="all">全部温度</option>
+                        <option value="summer">夏季</option>
+                        <option value="three-season">三季</option>
+                        <option value="winter">冬季</option>
+                    </select>
+                </div>
+                <button class="filter-btn" id="apply-filters">应用筛选</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品列表 -->
+    <section class="product-list">
+        <div class="container">
+            <div class="product-grid">
+                <!-- 睡袋产品1 -->
+                <div class="product-card" data-product-id="2">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=down%20sleeping%20bag%20winter%20camping%20high%20quality&image_size=landscape_4_3" alt="羽绒睡袋">
+                    <h3>羽绒睡袋</h3>
+                    <p>高品质羽绒睡袋，保暖性能卓越，适合冬季露营。填充优质白鸭绒，重量轻，压缩性好，收纳方便。</p>
+                    <div class="price">¥899</div>
+                    <div class="product-buttons">
+                        <button class="view-details" data-product-id="2">查看详情</button>
+                        <button class="add-to-cart" data-product-id="2">加入购物车</button>
+                    </div>
+                </div>
+                
+                <!-- 睡袋产品2 -->
+                <div class="product-card" data-product-id="8">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=synthetic%20sleeping%20bag%20three%20season&image_size=landscape_4_3" alt="合成纤维睡袋">
+                    <h3>合成纤维睡袋</h3>
+                    <p>合成纤维填充，保暖性能好，价格实惠，适合三季使用。即使在潮湿环境下也能保持保暖性能。</p>
+                    <div class="price">¥499</div>
+                    <div class="product-buttons">
+                        <button class="view-details" data-product-id="8">查看详情</button>
+                        <button class="add-to-cart" data-product-id="8">加入购物车</button>
+                    </div>
+                </div>
+                
+                <!-- 睡袋产品3 -->
+                <div class="product-card" data-product-id="9">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=mummy%20sleeping%20bag%20lightweight%20backpacking&image_size=landscape_4_3" alt="木乃伊睡袋">
+                    <h3>木乃伊睡袋</h3>
+                    <p>木乃伊式设计，减少热量流失，轻量化，适合背包旅行和徒步探险。紧凑收纳，节省空间。</p>
+                    <div class="price">¥699</div>
+                    <div class="product-buttons">
+                        <button class="view-details" data-product-id="9">查看详情</button>
+                        <button class="add-to-cart" data-product-id="9">加入购物车</button>
+                    </div>
+                </div>
+                
+                <!-- 睡袋产品4 -->
+                <div class="product-card" data-product-id="10">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=extreme%20cold%20weather%20sleeping%20bag%20expedition&image_size=landscape_4_3" alt="极限低温睡袋">
+                    <h3>极限低温睡袋</h3>
+                    <p>专业极限低温睡袋，适合高海拔登山和极地探险。填充高品质羽绒，保暖性能卓越，可抵御-30℃低温。</p>
+                    <div class="price">¥1999</div>
+                    <div class="product-buttons">
+                        <button class="view-details" data-product-id="10">查看详情</button>
+                        <button class="add-to-cart" data-product-id="10">加入购物车</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <p>户外探险是专业的户外装备供应商，致力于为户外爱好者提供高品质的装备和服务。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="tent.html">帐篷</a></li>
+                        <li><a href="sleeping-bag.html">睡袋</a></li>
+                        <li><a href="backpack.html">背包</a></li>
+                        <li><a href="cookware.html">炊具</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>客户服务</h3>
+                    <ul>
+                        <li><a href="#">退换货政策</a></li>
+                        <li><a href="#">配送信息</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 户外探险. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 产品详情模态框 -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="product-image">
+                    <img id="modal-product-image" src="" alt="产品图片">
+                </div>
+                <div class="product-info">
+                    <h3 id="modal-product-title"></h3>
+                    <div class="price" id="modal-product-price"></div>
+                    <p id="modal-product-description"></p>
+                    <div class="product-specs">
+                        <h4>产品规格</h4>
+                        <ul id="modal-product-specs"></ul>
+                    </div>
+                    <div class="quantity-control">
+                        <label for="quantity">数量:</label>
+                        <input type="number" id="quantity" min="1" value="1">
+                    </div>
+                    <button class="btn add-to-cart-modal">加入购物车</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 购物车模态框 -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h3>购物车</h3>
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <span>总计:</span>
+                    <span id="cart-total-price">¥0</span>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn" id="checkout-btn">结算</button>
+                    <button class="btn secondary" id="continue-shopping">继续购物</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 登录/注册模态框 -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="auth-form">
+                    <h3>登录</h3>
+                    <form id="login-form">
+                        <input type="email" placeholder="邮箱" required>
+                        <input type="password" placeholder="密码" required>
+                        <button type="submit">登录</button>
+                        <p>还没有账号？ <a href="#" id="switch-to-register">立即注册</a></p>
+                    </form>
+                </div>
+                <div class="auth-form" id="register-form-container" style="display: none;">
+                    <h3>注册</h3>
+                    <form id="register-form">
+                        <input type="text" placeholder="用户名" required>
+                        <input type="email" placeholder="邮箱" required>
+                        <input type="password" placeholder="密码" required>
+                        <button type="submit">注册</button>
+                        <p>已有账号？ <a href="#" id="switch-to-login">立即登录</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
