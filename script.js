@@ -185,10 +185,20 @@ mobileMenuBtn.addEventListener('click', function() {
 
 // 英雄区域轮播
 function showSlide(index) {
-    heroSlides.forEach(slide => {
+    heroSlides.forEach((slide, i) => {
         slide.classList.remove('active');
+        // 暂停非活动幻灯片的视频
+        const video = slide.querySelector('video');
+        if (video) {
+            video.pause();
+        }
     });
     heroSlides[index].classList.add('active');
+    // 播放当前活动幻灯片的视频
+    const activeVideo = heroSlides[index].querySelector('video');
+    if (activeVideo) {
+        activeVideo.play();
+    }
     currentSlide = index;
 }
 
