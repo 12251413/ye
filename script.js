@@ -191,6 +191,8 @@ function showSlide(index) {
         const video = slide.querySelector('video');
         if (video) {
             video.pause();
+            // 移除之前的事件监听器
+            video.removeEventListener('ended', handleVideoEnd);
         }
     });
     heroSlides[index].classList.add('active');
@@ -198,6 +200,8 @@ function showSlide(index) {
     const activeVideo = heroSlides[index].querySelector('video');
     if (activeVideo) {
         activeVideo.play();
+        // 添加播放结束事件监听器
+        activeVideo.addEventListener('ended', handleVideoEnd);
     }
     currentSlide = index;
 }
@@ -212,11 +216,13 @@ function prevSlide() {
     showSlide(newIndex);
 }
 
+// 视频播放结束处理函数
+function handleVideoEnd() {
+    nextSlide();
+}
+
 prevBtn.addEventListener('click', prevSlide);
 nextBtn.addEventListener('click', nextSlide);
-
-// 自动轮播
-setInterval(nextSlide, 5000);
 
 // 产品详情模态框
 viewDetailsBtns.forEach(btn => {
@@ -422,17 +428,23 @@ contactForm.addEventListener('submit', function(e) {
 
 // 了解更多按钮
 learnMoreBtn.addEventListener('click', function() {
-    alert('关于我们的更多信息正在更新中，敬请期待！');
+    window.location.href = 'about.html';
 });
 
 // 平滑滚动
 const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
 smoothScrollLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-        e.preventDefault();
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
         
+        // 检查是否是指向外部文件的链接
+        if (targetId.includes('.html')) {
+            // 不阻止默认行为，让链接正常跳转
+            return;
+        }
+        
+        e.preventDefault();
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             targetElement.scrollIntoView({
