@@ -462,6 +462,15 @@ function init() {
     showSlide(0);
     // 初始化购物车
     updateCart();
+    
+    // 尝试播放第一个视频
+    const firstVideo = document.querySelector('.hero-slide.active video');
+    if (firstVideo) {
+        // 尝试播放视频，如果失败（可能是浏览器限制），则不做处理
+        firstVideo.play().catch(e => {
+            console.log('视频自动播放被浏览器阻止:', e);
+        });
+    }
 }
 
 // 页面加载完成后初始化
