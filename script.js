@@ -191,8 +191,6 @@ function showSlide(index) {
         const video = slide.querySelector('video');
         if (video) {
             video.pause();
-            // 移除之前的事件监听器
-            video.removeEventListener('ended', handleVideoEnd);
         }
     });
     heroSlides[index].classList.add('active');
@@ -200,8 +198,6 @@ function showSlide(index) {
     const activeVideo = heroSlides[index].querySelector('video');
     if (activeVideo) {
         activeVideo.play();
-        // 添加播放结束事件监听器
-        activeVideo.addEventListener('ended', handleVideoEnd);
     }
     currentSlide = index;
 }
@@ -214,11 +210,6 @@ function nextSlide() {
 function prevSlide() {
     const newIndex = (currentSlide - 1 + heroSlides.length) % heroSlides.length;
     showSlide(newIndex);
-}
-
-// 视频播放结束处理函数
-function handleVideoEnd() {
-    nextSlide();
 }
 
 prevBtn.addEventListener('click', prevSlide);
